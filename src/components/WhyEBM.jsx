@@ -3,7 +3,7 @@
 const FEATURES = [
   {
     title: 'Results Over Vanity Metrics',
-    desc:  'We focus on customers, leads, and real revenue growth , not just views and follower counts that don\'t pay the bills.',
+    desc:  'We focus on customers, leads, and real revenue growth, not just views and follower counts that don\'t pay the bills.',
     gradient: 'linear-gradient(135deg, #4361EE 0%, #4CC9F0 100%)',
     icon: (
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
