@@ -3,8 +3,8 @@
 const NAV = [
   { label: 'Home',     id: 'home'     },
   { label: 'Services', id: 'services' },
-  { label: 'Why EBM',  id: 'why-ebm'  },
   { label: 'About',    id: 'about'    },
+  { label: 'Why EBM',  id: 'why-ebm'  },
   { label: 'Contact',  id: 'contact'  },
 ]
 

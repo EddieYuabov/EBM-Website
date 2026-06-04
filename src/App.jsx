@@ -34,8 +34,8 @@ export default function App() {
       <main>
         <Hero />
         <Services />
-        <WhyEBM />
         <About />
+        <WhyEBM />
         <Contact />
       </main>
       <Footer />

@@ -5,8 +5,8 @@ const CALENDLY = 'https://calendly.com/edward-yuabov-eddiesites/30min?month=2026
 const NAV_LINKS = [
   { label: 'Home',     id: 'home' },
   { label: 'Services', id: 'services' },
-  { label: 'Why EBM',  id: 'why-ebm' },
   { label: 'About',    id: 'about' },
+  { label: 'Why EBM',  id: 'why-ebm' },
   { label: 'Contact',  id: 'contact' },
 ]
 

@@ -496,6 +496,30 @@ img {
   pointer-events: none;
 }
 
+.hero__bg-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__bg-icon {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.18);
+  animation: bg-icon-float linear infinite;
+}
+
+@media (max-width: 900px) {
+  .bg-icon--desktop { display: none; }
+}
+
+@keyframes bg-icon-float {
+  0%   { transform: translateY(0px)   rotate(0deg);  opacity: 0;    }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateY(-80px) rotate(15deg); opacity: 0;    }
+}
+
 .hero__inner {
   position: relative;
   max-width: var(--max-w);
@@ -780,13 +804,11 @@ img {
     gap: 56px;
     text-align: center;
   }
-  .hero__visual { order: -1; }
-  .hero__card { max-width: 340px; margin: 0 auto; }
-  .hero__card-float { display: none; }
+  .hero__visual { display: none; }
+  .hero__badge { display: none; }
   .hero__content { align-items: center; }
   .hero__sub { margin: 0 auto 36px; }
   .hero__ctas { justify-content: center; }
-  .hero__badge { margin-left: auto; margin-right: auto; }
 }
 @media (max-width: 520px) {
   .hero__headline { font-size: 2.2rem; }
