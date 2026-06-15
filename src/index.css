@@ -803,6 +803,7 @@ img {
     grid-template-columns: 1fr;
     gap: 56px;
     text-align: center;
+    padding-top: 40px;
   }
   .hero__visual { display: none; }
   .hero__badge { display: none; }
