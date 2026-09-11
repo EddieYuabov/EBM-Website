@@ -1,48 +1,66 @@
-// Footer , clean, centered layout with nav links and copyright
+// Footer — clean, centered layout with nav links and copyright
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const NAV = [
-  { label: 'Home',     id: 'home'     },
+  { label: 'Work',     to: '/work'  },
   { label: 'Services', id: 'services' },
+  { label: 'Results',  id: 'results'  },
   { label: 'About',    id: 'about'    },
-  { label: 'Why EBM',  id: 'why-ebm'  },
   { label: 'Contact',  id: 'contact'  },
 ]
 
-const scrollTo = (id) =>
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+const PHONE = '9294137656'
+const PHONE_DISPLAY = '(929) 413-7656'
 
 export default function Footer() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const onHome = location.pathname === '/'
+
+  const handleNavClick = ({ to, id }) => {
+    if (to) {
+      navigate(to)
+      return
+    }
+    if (onHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 80)
+    }
+  }
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer__inner">
-          {/* Logo */}
           <div className="footer__logo">
-            <div className="footer__logo-mark">EBM</div>
+            <img className="footer__logo-mark" src="/logo-mark-white.png" alt="" />
+            <span className="footer__logo-text">Empower</span>
           </div>
 
-          {/* Tagline */}
           <p className="footer__tagline">
-            Social marketing for small businesses who have <br/> no idea how to market.
+            Social Media · Content · Growth
           </p>
 
-          {/* Nav */}
           <nav className="footer__nav" aria-label="Footer navigation">
-            {NAV.map(({ label, id }) => (
+            {NAV.map((link) => (
               <button
-                key={id}
+                key={link.label}
                 className="footer__nav-link"
-                onClick={() => scrollTo(id)}
+                onClick={() => handleNavClick(link)}
               >
-                {label}
+                {link.label}
               </button>
             ))}
           </nav>
 
+          <a className="footer__nav-link" href={`tel:+1${PHONE}`}>{PHONE_DISPLAY}</a>
+
           <div className="footer__divider" />
 
           <p className="footer__copy">
-            © {new Date().getFullYear()} EBM , Eddie Brand & Marketing. All rights reserved.
+            © {new Date().getFullYear()} Empower. All rights reserved.
           </p>
         </div>
       </div>
