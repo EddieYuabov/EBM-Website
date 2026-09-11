@@ -119,6 +119,33 @@ export const PROJECTS = [
       learned: null,
     },
   },
+  {
+    slug: 'ruach-breslov',
+    name: 'Ruach Breslov',
+    industry: 'Jewish Education / Nonprofit',
+    industryKey: 'nonprofit',
+    platforms: ['Instagram', 'TikTok'],
+    personality: 'fast',
+    layout: 'media-left',
+    headline: 'Turning long-form Jewish teachings into short-form social growth.',
+    description: 'We transformed long-form spiritual and philosophical lectures into engaging short-form content designed for Instagram and TikTok — helping Ruach Breslov reach audiences far beyond its existing community.',
+    heroStats: [
+      { value: '56.6K+', label: 'Known Views' },
+      { value: '752',    label: 'Combined Followers' },
+      { value: '86%+',   label: 'Discovery Traffic' },
+    ],
+    secondaryStat: '357 Known Net Followers Gained',
+    hoverStat: null,
+    contentPieces: [
+      { label: 'Happiness', featured: true },
+      { label: 'Trauma' },
+      { label: 'Money' },
+      { label: 'Relationships' },
+      { label: 'Personal Growth' },
+    ],
+    hasCaseStudy: true,
+    linkLabel: 'View Case Study',
+  },
 ]
 
 export const getProjectBySlug = (slug) => PROJECTS.find((p) => p.slug === slug)

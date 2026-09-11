@@ -1947,3 +1947,39 @@ mark { background: none; color: inherit; }
   .hp-audience__row { gap: 32px; }
   .hp-next-kpi { padding: 40px 24px; }
 }
+
+/* =============================================
+   RUACH BRESLOV — platform breakdown columns
+   ============================================= */
+.rb-platform-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  margin-top: 40px;
+}
+.rb-platform-col__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.rb-platform-col__icon { width: 20px; height: 20px; color: var(--blue-light); }
+.rb-platform-col__name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.rb-platform-col__period {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 800px) {
+  .rb-platform-cols { grid-template-columns: 1fr; gap: 48px; }
+}

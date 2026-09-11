@@ -25,12 +25,13 @@ const PROJECTS = [
     ],
   },
   {
-    name: 'Your Brand Here',
-    tag: 'Social Media · Content · Growth',
+    slug: 'ruach-breslov',
+    name: 'Ruach Breslov',
+    tag: 'Instagram · TikTok',
     stats: [
-      { val: '—', label: 'Views' },
-      { val: '—', label: 'Followers' },
-      { val: '—', label: 'Days' },
+      { val: '56.6K+', label: 'Views' },
+      { val: '752',    label: 'Followers' },
+      { val: '86%+',   label: 'Discovery' },
     ],
   },
 ]
@@ -45,7 +46,7 @@ function CardMedia({ p }) {
   }
   return (
     <div className="project-card__media">
-      <span className="project-card__badge">Case Study Coming Soon</span>
+      {!p.slug && <span className="project-card__badge">Case Study Coming Soon</span>}
       <img className="project-card__watermark" src="/logo-mark-white.png" alt="" aria-hidden="true" />
     </div>
   )
