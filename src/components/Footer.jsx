@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from 'react-router-dom'
 
 const NAV = [
   { label: 'Work',     to: '/work'  },
-  { label: 'Services', id: 'services' },
   { label: 'Results',  id: 'results'  },
   { label: 'About',    id: 'about'    },
   { label: 'Contact',  id: 'contact'  },

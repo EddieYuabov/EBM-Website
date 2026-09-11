@@ -5,7 +5,6 @@ const CALENDLY = 'https://calendly.com/edward-yuabov-eddiesites/30min?month=2026
 
 const NAV_LINKS = [
   { label: 'Work',     to: '/work' },
-  { label: 'Services', id: 'services' },
   { label: 'Results',  id: 'results' },
   { label: 'About',    id: 'about' },
   { label: 'Contact',  id: 'contact' },

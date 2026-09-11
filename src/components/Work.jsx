@@ -39,9 +39,7 @@ function CardMedia({ p }) {
   if (p.logo) {
     return (
       <div className="project-card__media project-card__media--logo">
-        <span className="client-logo-badge">
-          <img src={p.logo} alt={`${p.name} logo`} />
-        </span>
+        <img className="project-card__logo-img" src={p.logo} alt={`${p.name} logo`} />
       </div>
     )
   }

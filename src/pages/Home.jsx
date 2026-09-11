@@ -1,6 +1,5 @@
 import Hero         from '../components/Hero'
 import Attention    from '../components/Attention'
-import Services     from '../components/Services'
 import Results      from '../components/Results'
 import Work         from '../components/Work'
 import Process      from '../components/Process'
@@ -16,7 +15,6 @@ export default function Home() {
     <>
       <Hero />
       <Attention />
-      <Services />
       <Results />
       <Work />
       <Process />
