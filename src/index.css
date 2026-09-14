@@ -792,29 +792,37 @@ mark { background: none; color: inherit; }
 /* =============================================
    RESULTS
    ============================================= */
+/* Flexbox, not grid — a grid's auto-fit column count is fixed per row, so a
+   sparse last row (e.g. 8 items landing 7-per-row) leaves an empty, oddly
+   colored gap where the missing columns would be. Flex-wrap just stops. */
 .results__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
   margin-top: 50px;
 }
 
 .result-card {
   background: var(--page-bg);
-  padding: 42px 26px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 24px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex: 1 1 220px;
+  max-width: 300px;
 }
 
 .result-card__value {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  font-size: clamp(1.3rem, 1.7vw, 1.55rem);
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--blue);
+  overflow-wrap: anywhere;
+  white-space: nowrap;
 }
 .result-card__value.is-placeholder { color: var(--ink-faint); }
 
@@ -834,7 +842,10 @@ mark { background: none; color: inherit; }
 }
 
 @media (max-width: 760px) {
-  .results__grid { grid-template-columns: repeat(2, 1fr); }
+  .result-card { flex-basis: 45%; max-width: none; }
+}
+@media (max-width: 480px) {
+  .result-card { flex-basis: 100%; }
 }
 
 /* =============================================
@@ -1750,11 +1761,12 @@ mark { background: none; color: inherit; }
 .count-stat { display: flex; flex-direction: column; gap: 4px; }
 .count-stat__value {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.2rem);
   font-weight: 900;
   color: var(--blue);
   letter-spacing: -0.02em;
   line-height: 1.05;
+  overflow-wrap: anywhere;
 }
 .count-stat--emphasize .count-stat__value {
   color: var(--blue-light);

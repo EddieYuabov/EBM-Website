@@ -16,8 +16,10 @@ export default function About() {
           <div className="about__image-wrap reveal">
             <div className="about__photo">
               <img
-                src="/frontshot.png"
+                src="/frontshot.jpg"
                 alt="Eddie Yuabov, Founder of Empower"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: '100%',

@@ -1,5 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import PhoneFrame from '../components/PhoneFrame'
+import CountStat from '../components/CountStat'
 import FinalCTA from '../components/FinalCTA'
 import { PlatformIcon } from '../components/icons/PlatformIcons'
 import { getProjectBySlug } from '../data/projects'
@@ -42,7 +43,7 @@ export default function CaseStudyPage() {
           {project.logo && (
             <div className="reveal d1">
               <span className="client-logo-badge client-logo-badge--sm">
-                <img src={project.logo} alt={`${project.name} logo`} />
+                <img src={project.logo} alt={`${project.name} logo`} loading="lazy" decoding="async" />
               </span>
             </div>
           )}
@@ -90,9 +91,7 @@ export default function CaseStudyPage() {
               <div className="results__grid reveal d2">
                 {cs.results.map((r) => (
                   <div key={r.label} className="result-card">
-                    <div className="result-card__value">{r.value}</div>
-                    <div className="result-card__label">{r.label}</div>
-                    {r.period && <div className="result-card__period">{r.period}</div>}
+                    <CountStat display={r.value} label={r.label} sublabel={r.period} />
                   </div>
                 ))}
               </div>

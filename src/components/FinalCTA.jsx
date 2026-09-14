@@ -16,7 +16,7 @@ export default function FinalCTA({
 }) {
   return (
     <section className="section section--dark final-cta" id="contact">
-      <img className="final-cta__watermark" src="/logo-mark-white.png" alt="" aria-hidden="true" />
+      <img className="final-cta__watermark" src="/logo-mark-white.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
 
       <div className="container final-cta__inner">
         <h2 className="final-cta__statement reveal">

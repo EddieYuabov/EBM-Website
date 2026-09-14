@@ -16,7 +16,7 @@ export const HP = {
 
   challenge: {
     headline: 'How Do You Make People Care About A Pharmacy On TikTok?',
-    body: "Most people think about their pharmacy when they need medication—not when they're scrolling for entertainment. The challenge was to make Healthy Pharmacy feel less like a business posting advertisements and more like a social account people would actually choose to watch.",
+    body: "Most people think about their pharmacy when they need medication, not when they're scrolling for entertainment. The challenge was to make Healthy Pharmacy feel less like a business posting advertisements and more like a social account people would actually choose to watch.",
   },
 
   idea: {
@@ -47,7 +47,7 @@ export const HP = {
 
   graph: {
     headline: ['Not One Viral Moment.', 'A Repeatable Content Engine.'],
-    body: 'Healthy Pharmacy experienced major distribution spikes across multiple content cycles—evidence that the creative approach could repeatedly earn attention rather than relying on one isolated hit.',
+    body: 'Healthy Pharmacy experienced major distribution spikes across multiple content cycles, evidence that the creative approach could repeatedly earn attention rather than relying on one isolated hit.',
     spikes: ['Late June', 'Late July', 'Late August'],
     peak: { display: '~224.8K', label: 'Views In A Single Day', date: 'August 27' },
     caption: 'Illustrative 90-day trend built around verified performance highlights.',

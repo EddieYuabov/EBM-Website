@@ -41,7 +41,7 @@ export default function RuachBreslovCaseStudy() {
           {project.logo && (
             <div className="reveal d1">
               <span className="client-logo-badge client-logo-badge--sm">
-                <img src={project.logo} alt={`${project.name} logo`} />
+                <img src={project.logo} alt={`${project.name} logo`} loading="lazy" decoding="async" />
               </span>
             </div>
           )}

@@ -9,7 +9,7 @@ const PROJECTS = [
     slug: 'aronov-associates',
     name: 'Aronov & Associates',
     tag: 'TikTok · Instagram · Facebook',
-    logo: '/aronov-law-logo.png',
+    logo: '/aronov-law-logo.jpg',
     stats: [
       { val: '2M+',    label: 'Views' },
       { val: '+1151',  label: 'Followers' },
@@ -20,7 +20,7 @@ const PROJECTS = [
     slug: 'healthy-pharmacy',
     name: 'Healthy Pharmacy',
     tag: 'TikTok · Instagram',
-    logo: '/healthy-pharmacy-logo.png',
+    logo: '/healthy-pharmacy-logo.jpg',
     stats: [
       { val: '4.13M', label: 'Views' },
       { val: '407K',  label: 'Likes' },
@@ -31,7 +31,7 @@ const PROJECTS = [
     slug: 'ruach-breslov',
     name: 'Ruach Breslov',
     tag: 'Instagram · TikTok',
-    logo: '/ruach-breslov-logo.png',
+    logo: '/ruach-breslov-logo.jpg',
     stats: [
       { val: '56.6K+', label: 'Views' },
       { val: '752',    label: 'Followers' },
@@ -44,14 +44,14 @@ function CardMedia({ p }) {
   if (p.logo) {
     return (
       <div className="project-card__media project-card__media--logo">
-        <img className="project-card__logo-img" src={p.logo} alt={`${p.name} logo`} />
+        <img className="project-card__logo-img" src={p.logo} alt={`${p.name} logo`} loading="lazy" decoding="async" />
       </div>
     )
   }
   return (
     <div className="project-card__media">
       {!p.slug && <span className="project-card__badge">Case Study Coming Soon</span>}
-      <img className="project-card__watermark" src="/logo-mark-white.png" alt="" aria-hidden="true" />
+      <img className="project-card__watermark" src="/logo-mark-white.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
     </div>
   )
 }

@@ -114,7 +114,7 @@ export default function HealthyPharmacyCaseStudy() {
           {project.logo && (
             <div className="reveal d1">
               <span className="client-logo-badge client-logo-badge--sm">
-                <img src={project.logo} alt={`${project.name} logo`} />
+                <img src={project.logo} alt={`${project.name} logo`} loading="lazy" decoding="async" />
               </span>
             </div>
           )}
@@ -124,7 +124,7 @@ export default function HealthyPharmacyCaseStudy() {
           </h1>
           <p className="case-open__oneliner reveal d3">
             We turned everyday pharmacy experiences into entertaining, relatable
-            short-form content—and built a repeatable audience engine around it.
+            short-form content, and built a repeatable audience engine around it.
           </p>
 
           <div className="case-open__platforms reveal d3">

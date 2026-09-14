@@ -23,7 +23,7 @@ export const PROJECTS = [
     platforms: ['TikTok', 'Instagram', 'Facebook'],
     personality: 'fast', // fast | fun | cinematic — drives the visual treatment
     layout: 'media-left',
-    logo: '/aronov-law-logo.png',
+    logo: '/aronov-law-logo.jpg',
     headline: 'Making legal content impossible to scroll past.',
     description: 'We transformed everyday legal questions into fast, curiosity-driven social content designed to educate, entertain and earn attention.',
     heroStats: [
@@ -73,7 +73,7 @@ export const PROJECTS = [
     platforms: ['TikTok', 'Instagram'],
     personality: 'fun',
     layout: 'info-left',
-    logo: '/healthy-pharmacy-logo.png',
+    logo: '/healthy-pharmacy-logo.jpg',
     headline: 'We Made A Pharmacy Entertaining.',
     description: 'Relatable pharmacy content turned an everyday local business into a short-form content engine reaching millions.',
     heroStats: [
@@ -127,7 +127,7 @@ export const PROJECTS = [
     platforms: ['Instagram', 'TikTok'],
     personality: 'fast',
     layout: 'media-left',
-    logo: '/ruach-breslov-logo.png',
+    logo: '/ruach-breslov-logo.jpg',
     headline: 'Turning long-form Jewish teachings into short-form social growth.',
     description: 'We transformed long-form spiritual and philosophical lectures into engaging short-form content designed for Instagram and TikTok — helping Ruach Breslov reach audiences far beyond its existing community.',
     heroStats: [

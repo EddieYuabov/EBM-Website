@@ -58,7 +58,7 @@ function ProjectInfo({ project }) {
       {project.logo && (
         <div>
           <span className="client-logo-badge client-logo-badge--sm">
-            <img src={project.logo} alt={`${project.name} logo`} />
+            <img src={project.logo} alt={`${project.name} logo`} loading="lazy" decoding="async" />
           </span>
         </div>
       )}
