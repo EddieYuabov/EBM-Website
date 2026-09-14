@@ -21,9 +21,9 @@ function ProjectMedia({ project, hovered, liveCount }) {
     return (
       <div className={`project-media project-media--stack${hovered ? ' is-hovered' : ''}`}>
         {rest.map((c, i) => (
-          <PhoneFrame key={i} hook={c.label} className={`project-media__frame frame-${i}`} />
+          <PhoneFrame key={i} hook={c.label} poster={c.poster} link={c.link} className={`project-media__frame frame-${i}`} />
         ))}
-        <PhoneFrame featured hook={featured.label} className="project-media__frame frame-featured" />
+        <PhoneFrame featured hook={featured.label} poster={featured.poster} link={featured.link} className="project-media__frame frame-featured" />
         {project.hoverStat && (
           <div className={`project-media__live${hovered ? ' show' : ''}`}>
             <span className="project-media__live-val">{liveCount.toLocaleString()}</span>
@@ -38,7 +38,7 @@ function ProjectMedia({ project, hovered, liveCount }) {
     return (
       <div className="project-media project-media--scatter">
         {project.contentPieces.map((c, i) => (
-          <PhoneFrame key={i} hook={c.label} className={`project-media__frame scatter-${i}`} />
+          <PhoneFrame key={i} hook={c.label} poster={c.poster} link={c.link} className={`project-media__frame scatter-${i}`} />
         ))}
       </div>
     )
@@ -135,6 +135,7 @@ function buildWallItems() {
         client: project.name,
         platform: project.platforms[i % project.platforms.length],
         hook: piece.label || null,
+        poster: piece.poster || null,
         size: sizes[items.length % sizes.length],
       })
     })
@@ -144,11 +145,15 @@ function buildWallItems() {
 
 function WallTile({ item }) {
   return (
-    <Link to={`/work/${item.slug}`} className={`wall-tile wall-tile--${item.size}`}>
+    <Link
+      to={`/work/${item.slug}`}
+      className={`wall-tile wall-tile--${item.size}`}
+      style={item.poster ? { backgroundImage: `url(${item.poster})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+    >
       <span className="wall-tile__platform">
         <PlatformIcon name={item.platform} className="wall-tile__platform-icon" />
       </span>
-      {item.hook && <span className="wall-tile__hook">{item.hook}</span>}
+      {item.hook && !item.poster && <span className="wall-tile__hook">{item.hook}</span>}
       <div className="wall-tile__overlay">
         <span className="wall-tile__client">{item.client}</span>
         <span className="wall-tile__platform-name">{item.platform}</span>

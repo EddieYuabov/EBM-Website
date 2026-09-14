@@ -58,7 +58,7 @@ export default function CaseStudyPage() {
 
           <div className="case-open__media reveal d4">
             {project.contentPieces.map((c, i) => (
-              <PhoneFrame key={i} hook={c.label} featured={c.featured} className={`case-open__frame f-${i}`} />
+              <PhoneFrame key={i} hook={c.label} poster={c.poster} link={c.link} featured={c.featured} className={`case-open__frame f-${i}`} />
             ))}
           </div>
         </div>
@@ -74,7 +74,7 @@ export default function CaseStudyPage() {
           <p className="case-section__text reveal d1">{cs.contentNote}</p>
           <div className="case-content__grid reveal d2">
             {project.contentPieces.map((c, i) => (
-              <PhoneFrame key={i} hook={c.label} className="case-content__frame" />
+              <PhoneFrame key={i} hook={c.label} poster={c.poster} link={c.link} className="case-content__frame" />
             ))}
           </div>
         </div>

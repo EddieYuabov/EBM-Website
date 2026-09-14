@@ -38,6 +38,13 @@ export default function RuachBreslovCaseStudy() {
             All Work
           </Link>
 
+          {project.logo && (
+            <div className="reveal d1">
+              <span className="client-logo-badge client-logo-badge--sm">
+                <img src={project.logo} alt={`${project.name} logo`} />
+              </span>
+            </div>
+          )}
           <span className="eyebrow reveal d1">Jewish Education / Nonprofit</span>
           <h1 className="display display-lg reveal d2">Ruach Breslov</h1>
           <p className="case-open__oneliner reveal d3">

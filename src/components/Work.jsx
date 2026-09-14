@@ -1,5 +1,8 @@
 // Work — case study slots. Replace PROJECTS entries with real client work as it launches.
+// Description and video-clip thumbnails are pulled from the shared project
+// data (src/data/projects.js) by slug so there's one source of truth.
 import { Link } from 'react-router-dom'
+import { PROJECTS as ALL_PROJECTS } from '../data/projects'
 
 const PROJECTS = [
   {
@@ -28,6 +31,7 @@ const PROJECTS = [
     slug: 'ruach-breslov',
     name: 'Ruach Breslov',
     tag: 'Instagram · TikTok',
+    logo: '/ruach-breslov-logo.png',
     stats: [
       { val: '56.6K+', label: 'Views' },
       { val: '752',    label: 'Followers' },
@@ -52,11 +56,34 @@ function CardMedia({ p }) {
   )
 }
 
-function CardBody({ p }) {
+function ClipStrip({ pieces }) {
+  const clips = (pieces || []).filter((c) => c.poster).slice(0, 4)
+  if (!clips.length) return null
+  return (
+    <div className="project-card__clips">
+      {clips.map((c) => (
+        <button
+          key={c.label}
+          className="project-card__clip"
+          style={{ backgroundImage: `url(${c.poster})` }}
+          aria-label={`Watch: ${c.label}`}
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            window.open(c.link, '_blank', 'noopener,noreferrer')
+          }}
+        />
+      ))}
+    </div>
+  )
+}
+
+function CardBody({ p, full }) {
   return (
     <div className="project-card__body">
       <span className="project-card__tag">{p.tag}</span>
       <h3 className="project-card__name">{p.name}</h3>
+      {full?.description && <p className="project-card__desc">{full.description}</p>}
       <div className="project-card__stats">
         {p.stats.map((s) => (
           <div key={s.label}>
@@ -65,6 +92,7 @@ function CardBody({ p }) {
           </div>
         ))}
       </div>
+      <ClipStrip pieces={full?.contentPieces} />
       <span className="project-card__link">
         View Project
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -88,19 +116,20 @@ export default function Work() {
         </p>
 
         <div className="work__grid">
-          {PROJECTS.map((p, i) =>
-            p.slug ? (
+          {PROJECTS.map((p, i) => {
+            const full = ALL_PROJECTS.find((fp) => fp.slug === p.slug)
+            return p.slug ? (
               <Link key={i} to={`/work/${p.slug}`} className={`project-card project-card--live reveal d${(i % 3) + 1}`}>
                 <CardMedia p={p} />
-                <CardBody p={p} />
+                <CardBody p={p} full={full} />
               </Link>
             ) : (
               <div key={i} className={`project-card reveal d${(i % 3) + 1}`}>
                 <CardMedia p={p} />
-                <CardBody p={p} />
+                <CardBody p={p} full={full} />
               </div>
             )
-          )}
+          })}
         </div>
       </div>
     </section>

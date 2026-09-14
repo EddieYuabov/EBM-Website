@@ -2,9 +2,10 @@
 // Pass `videoSrc` + `poster` once real client footage is available and it
 // plays a muted preview on hover (desktop) or tap (mobile/touch) — until
 // then it renders a branded placeholder so the layout is ready to go.
+// Pass `link` to make the frame open the original post in a new tab on click.
 import { useRef, useState } from 'react'
 
-export default function PhoneFrame({ hook, featured, badge, poster, videoSrc, style, className = '' }) {
+export default function PhoneFrame({ hook, featured, badge, poster, videoSrc, link, style, className = '' }) {
   const videoRef = useRef(null)
   const [playing, setPlaying] = useState(false)
 
@@ -19,7 +20,12 @@ export default function PhoneFrame({ hook, featured, badge, poster, videoSrc, st
     videoRef.current?.pause()
     if (videoRef.current) videoRef.current.currentTime = 0
   }
-  const handleTap = () => {
+  const handleClick = (e) => {
+    if (link) {
+      e.stopPropagation()
+      window.open(link, '_blank', 'noopener,noreferrer')
+      return
+    }
     if (!videoSrc) return
     playing ? stop() : play()
   }
@@ -30,7 +36,7 @@ export default function PhoneFrame({ hook, featured, badge, poster, videoSrc, st
       style={{ ...style, backgroundImage: poster ? `url(${poster})` : undefined }}
       onMouseEnter={play}
       onMouseLeave={stop}
-      onClick={handleTap}
+      onClick={handleClick}
     >
       {videoSrc && (
         <video
@@ -53,7 +59,7 @@ export default function PhoneFrame({ hook, featured, badge, poster, videoSrc, st
         </span>
       )}
       {badge && <span className="phone-frame__badge">{badge}</span>}
-      {hook && !playing && <span className="phone-frame__hook">{hook}</span>}
+      {hook && !playing && !poster && <span className="phone-frame__hook">{hook}</span>}
     </div>
   )
 }

@@ -25,11 +25,11 @@ export const HP = {
   },
 
   contentFormats: [
-    { title: 'Pharmacy POVs',      desc: 'Relatable employee and workplace situations.' },
-    { title: 'Customer Moments',   desc: 'Funny or recognizable interactions inspired by everyday pharmacy life.' },
-    { title: 'Medication Humor',   desc: 'Familiar medication and health situations turned into entertaining short-form content.' },
-    { title: 'Pharmacy Education', desc: 'Useful information presented in the same fast, social-first style.' },
-    { title: 'Services',           desc: 'Content introducing prescription transfers, delivery, blister packaging and other pharmacy services.' },
+    { title: 'Pharmacy POVs',      desc: 'Relatable employee and workplace situations.', poster: '/healthy-pharmacy-povs.jpg', link: 'https://www.instagram.com/p/Dc1-ORWTGeC/' },
+    { title: 'Relatable Content',  desc: 'Funny or recognizable interactions inspired by everyday pharmacy life.', poster: '/healthy-pharmacy-relatable-content.jpg', link: 'https://www.tiktok.com/@healthypharmacy/video/7665380858425134367' },
+    { title: 'Medication Humor',   desc: 'Familiar medication and health situations turned into entertaining short-form content.', poster: '/healthy-pharmacy-medication-humor.jpg', link: 'https://www.tiktok.com/@healthypharmacy/video/7654650348468063519' },
+    { title: 'Pharmacy Education', desc: 'Useful information presented in the same fast, social-first style.', poster: '/healthy-pharmacy-education.jpg', link: 'https://www.tiktok.com/@healthypharmacy/video/7641668179185487118' },
+    { title: 'Services',           desc: 'Content introducing prescription transfers, delivery, blister packaging and other pharmacy services.', poster: '/healthy-pharmacy-services.jpg', link: 'https://www.tiktok.com/@healthypharmacy/video/7649170170891701534' },
   ],
 
   results: {

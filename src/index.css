@@ -911,6 +911,13 @@ mark { background: none; color: inherit; }
   color: var(--ink);
 }
 
+.project-card__desc {
+  font-size: 0.9rem;
+  color: var(--ink-dim);
+  line-height: 1.6;
+  max-width: 420px;
+}
+
 .project-card__stats { display: flex; gap: 28px; flex-wrap: wrap; }
 .project-card__stat-val {
   font-family: var(--font-heading);
@@ -953,6 +960,21 @@ mark { background: none; color: inherit; }
   max-height: 56px;
   object-fit: contain;
 }
+
+.project-card__clips { display: flex; gap: 10px; }
+.project-card__clip {
+  width: 52px;
+  height: 52px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--surface);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  transition: transform var(--t-fast) var(--ease);
+}
+.project-card__clip:hover { transform: translateY(-2px); }
 
 .project-card__link {
   display: inline-flex;

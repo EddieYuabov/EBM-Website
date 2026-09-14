@@ -135,7 +135,7 @@ export default function HealthyPharmacyCaseStudy() {
 
           <div className="case-open__media hp-hero__media reveal d4">
             {HP.contentFormats.map((c, i) => (
-              <PhoneFrame key={i} hook={c.title} featured={i === 0} className={`f-${i}`} />
+              <PhoneFrame key={i} hook={c.title} poster={c.poster} link={c.link} featured={i === 0} className={`f-${i}`} />
             ))}
           </div>
 
@@ -173,7 +173,7 @@ export default function HealthyPharmacyCaseStudy() {
           </div>
           <div className="hp-idea__media reveal d3">
             {HP.contentFormats.slice(0, 3).map((c, i) => (
-              <PhoneFrame key={i} hook={c.title} className={`hp-idea__frame idea-${i}`} />
+              <PhoneFrame key={i} hook={c.title} poster={c.poster} link={c.link} className={`hp-idea__frame idea-${i}`} />
             ))}
           </div>
         </div>
@@ -192,7 +192,7 @@ export default function HealthyPharmacyCaseStudy() {
               className={`hp-formats__card${tappedFrame === i ? ' is-active' : ''}`}
               onClick={() => setTappedFrame(tappedFrame === i ? null : i)}
             >
-              <PhoneFrame hook={c.title} className="hp-formats__frame" />
+              <PhoneFrame hook={c.title} poster={c.poster} link={c.link} className="hp-formats__frame" />
               <span className="hp-formats__title">{c.title}</span>
               <span className="hp-formats__desc">{c.desc}</span>
             </button>
